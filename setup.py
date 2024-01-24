@@ -1,7 +1,16 @@
 import os
 import platform
 import sys
+from setuptools import setup, find_packages
 
+setup(
+    name="multidict", 
+    version="1.2.3",
+
+    packages=find_packages(include=["multidict", "multidict._multilib"]),
+
+    # other metadata...
+)
 from setuptools import Extension, setup
 
 NO_EXTENSIONS = bool(os.environ.get("MULTIDICT_NO_EXTENSIONS"))
